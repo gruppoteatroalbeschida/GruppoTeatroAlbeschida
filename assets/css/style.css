@@ -73,7 +73,7 @@ section {
 
 .breadcrumbs {
     padding: 20px 0;
-    background-color: #f6fafa;
+    background-color: #061e5f;
     min-height: 40px;
     margin-top: 80px;
 }
@@ -134,7 +134,7 @@ section {
     right: 15px;
     bottom: 15px;
     z-index: 99999;
-    background: #70b9b0;
+    background: #200972;
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -148,7 +148,7 @@ section {
 }
 
 .back-to-top:hover {
-    background: #8bc6bf;
+    background: #061e5f;
     color: #fff;
 }
 
@@ -166,11 +166,11 @@ section {
     height: 80px;
     z-index: 997;
     transition: all 0.5s;
-    background: #2d6760;
+    background: #061e5f;
 }
 
 #header.header-scrolled {
-    background: #1d443f;
+    background: #045b74;
     height: 60px;
 }
 
@@ -179,15 +179,20 @@ section {
     margin: 0;
     padding: 0;
     line-height: 0;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 1px;
+}
+
+#header .logo img {
+    width: 35px;
 }
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     line-height: 0;
+    z
 }
 
 #header .logo img {
@@ -348,7 +353,7 @@ section {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(7, 56, 57, 0.9);
+    background: rgba(2, 95, 96, 0.9);
     transition: 0.3s;
 }
 
@@ -430,8 +435,8 @@ section {
 
 #hero {
     width: 100%;
-    height: 75vh;
-    background: url("../img/bgj.jpg") top center;
+    height: 80vh;
+    background: url("../img/bgrn.jpg") bottom center;
     background-size: cover;
     position: relative;
     margin-bottom: -80px;
@@ -439,7 +444,7 @@ section {
 
 #hero:before {
     content: "";
-    background: rgba(112, 185, 176, 0.85);
+    background: rgba(52, 140, 241, 0.842);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -464,16 +469,16 @@ section {
 #hero h1 {
     margin: 0 0 10px 0;
     font-size: 48px;
-    font-weight: 300;
+    font-weight: 800;
     line-height: 56px;
     color: #fff;
 }
 
 #hero h2 {
-    color: #eee;
+    color: #eaeaea;
     margin-bottom: 50px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 #hero .btn-get-started {
@@ -491,7 +496,7 @@ section {
 
 #hero .btn-get-started:hover {
     background: #fff;
-    color: #70b9b0;
+    color: #061e5f;
     border: 1px solid #70b9b0;
 }
 
