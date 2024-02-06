@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Inizializza la sessione
 session_start();
 
@@ -7,7 +7,7 @@ require '../assets/vendor/php-email-form/PHPMailer-master/src/PHPMailer.php';
 require '../assets/vendor/php-email-form/PHPMailer-master/src/SMTP.php';
 require '../assets/vendor/php-email-form/PHPMailer-master/src/Exception.php';
 
-// Funzione per pulire l'input
+// Funzione per pulire e filtrare l'input
 function clean_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
@@ -15,13 +15,9 @@ function clean_input($data) {
     return $data;
 }
 
-// Imposta il limite di richieste consentite entro il periodo di throttling (ad esempio, 5 richieste ogni 10 minuti)
-$throttle_limit = 5;
-$throttle_period = 600; // 10 minuti (600 secondi)
-
-// Genera e memorizza il token CSRF nella sessione
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+// Funzione per filtrare l'email
+function filter_email($email) {
+    return filter_var($email, FILTER_SANITIZE_EMAIL);
 }
 
 $errors = array();
@@ -35,6 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica il throttling
     $ip = $_SERVER['REMOTE_ADDR'];
     $timestamp = time();
+    $throttle_limit = 5;
+    $throttle_period = 600; // 10 minuti (600 secondi)
     $throttle_key = 'throttle_' . $ip;
     $throttle_data = isset($_SESSION[$throttle_key]) ? unserialize($_SESSION[$throttle_key]) : array('count' => 0, 'timestamp' => $timestamp);
 
@@ -54,21 +52,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Continua con la logica per l'invio dell'email solo se il token CSRF è valido e il throttling non ha superato il limite
     if (empty($errors)) {
-        // Validazione dei campi del modulo di contatto
-        if (empty($_POST["name"])) {
-            $errors[] = "Il campo nome è obbligatorio.";
-        } else {
-            $name = clean_input($_POST["name"]);
-            if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
-                $errors[] = "Il campo nome può contenere solo lettere e spazi.";
-            }
-        }
+        // Validazione e sanitizzazione dei campi del modulo di contatto
+        $name = clean_input($_POST["name"]);
+        $email = filter_email($_POST["email"]);
+        $subject = clean_input($_POST["subject"]);
+        $message = clean_input($_POST["message"]);
 
-        // Verifica se l'email è vuota e se è un'email valida
-        if (empty($_POST["email"])) {
-            $errors[] = "Il campo email è obbligatorio.";
+        // Verifica dei campi obbligatori
+        if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+            $errors[] = "Tutti i campi sono obbligatori.";
         } else {
-            $email = clean_input($_POST["email"]);
             // Verifica se l'email è valida
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $errors[] = "Formato email non valido.";
@@ -81,18 +74,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        // Verifica se l'oggetto è stato inserito
-        if (empty($_POST["subject"])) {
-            $errors[] = "Il campo oggetto è obbligatorio.";
-        } else {
-            $subject = clean_input($_POST["subject"]);
-        }
-
-        if (empty($_POST["message"])) {
-            $errors[] = "Il campo messaggio è obbligatorio.";
-        } else {
-            $message = clean_input($_POST["message"]);
-        }
+		// Verifica della lunghezza dei campi
+if (strlen($name) > 50 || strlen($subject) > 100 || strlen($message) > 500) {
+    $errors[] = "I campi superano la lunghezza massima consentita.";
+}
 
         // Se non ci sono errori di validazione, procedi con l'invio dell'email
         if (empty($errors)) {

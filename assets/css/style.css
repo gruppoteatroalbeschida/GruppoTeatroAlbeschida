@@ -596,7 +596,7 @@ section {
 --------------------------------------------------------------*/
 
 .call-to-action {
-    background: linear-gradient(rgba(1, 41, 42, 0.5), rgba(7, 56, 57, 0.5)), url("../img/bghj.jpg") fixed center center;
+    background: linear-gradient(rgba(4, 34, 93, 0.288), rgba(0, 19, 53, 0.5)), url('../img/caltwoaction.jpg') fixed center center;
     background-size: cover;
     padding: 60px 0;
 }
