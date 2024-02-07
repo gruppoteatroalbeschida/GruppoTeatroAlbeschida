@@ -1,18 +1,15 @@
-<?php
-// Inizializza la sessione
+<?php 
+// Inizializzazione della sessione
 session_start();
 
-// Include i file necessari di PHPMailer
+// Inclusione dei file necessari di PHPMailer
 require '../assets/vendor/php-email-form/PHPMailer-master/src/PHPMailer.php';
 require '../assets/vendor/php-email-form/PHPMailer-master/src/SMTP.php';
 require '../assets/vendor/php-email-form/PHPMailer-master/src/Exception.php';
 
 // Funzione per pulire e filtrare l'input
 function clean_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+    return htmlspecialchars(stripslashes(trim($data)));
 }
 
 // Funzione per filtrare l'email
@@ -20,108 +17,77 @@ function filter_email($email) {
     return filter_var($email, FILTER_SANITIZE_EMAIL);
 }
 
-$errors = array();
+// Inizializzazione dell'array degli errori
+$errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica il token CSRF
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        $errors[] = "Token CSRF non valido.";
-    }
+    // Validazione e sanitizzazione dei campi del modulo di contatto
+    $name = clean_input($_POST["name"]);
+    $email = filter_email($_POST["email"]);
+    $subject = clean_input($_POST["subject"]);
+    $message = clean_input($_POST["message"]);
 
-    // Verifica il throttling
-    $ip = $_SERVER['REMOTE_ADDR'];
-    $timestamp = time();
-    $throttle_limit = 5;
-    $throttle_period = 600; // 10 minuti (600 secondi)
-    $throttle_key = 'throttle_' . $ip;
-    $throttle_data = isset($_SESSION[$throttle_key]) ? unserialize($_SESSION[$throttle_key]) : array('count' => 0, 'timestamp' => $timestamp);
-
-    if ($timestamp - $throttle_data['timestamp'] < $throttle_period) {
-        if ($throttle_data['count'] >= $throttle_limit) {
-            $errors[] = "Limite di richieste raggiunto. Riprova più tardi.";
-        } else {
-            $throttle_data['count']++;
-        }
+    // Verifica dei campi obbligatori
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        $errors[] = "Tutti i campi sono obbligatori.";
     } else {
-        // Resetta il conteggio delle richieste se il periodo di throttling è scaduto
-        $throttle_data = array('count' => 1, 'timestamp' => $timestamp);
+        // Verifica se l'email è valida
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errors[] = "Formato email non valido.";
+        } else {
+            // Verifica il dominio dell'email
+            list($user, $domain) = explode('@', $email);
+            if (!checkdnsrr($domain, 'MX')) {
+                $errors[] = "Dominio email non valido.";
+            }
+        }
+
+        // Verifica della lunghezza dei campi
+        if (strlen($name) > 50 || strlen($subject) > 100 || strlen($email) > 50 || strlen($message) > 2000) {
+            $errors[] = "I campi superano la lunghezza massima consentita.";
+        }
+        if (strlen($name) < 2) {
+            $errors[] = "Il nome deve contenere almeno 2 caratteri.";
+        }
+        if (strlen($subject) < 5) {
+            $errors[] = "L'oggetto deve contenere almeno 5 caratteri.";
+        }
+        if (strlen($message) < 10) {
+            $errors[] = "Il messaggio deve contenere almeno 10 caratteri.";
+        }
+        // Filtraggio del messaggio per caratteri non consentiti
+        // Filtraggio del messaggio per caratteri non consentiti
+		if (!preg_match('/^[a-zA-Z0-9 .,@!?()-]*$/', $message)) {
+			$errors[] = "Il messaggio contiene caratteri non consentiti. Sono ammessi solo lettere, numeri, spazi, e i seguenti caratteri speciali: . , ! ? @ -";
+		}
     }
 
-    // Aggiorna i dati di throttling nella sessione
-    $_SESSION[$throttle_key] = serialize($throttle_data);
-
-    // Continua con la logica per l'invio dell'email solo se il token CSRF è valido e il throttling non ha superato il limite
+    // Se non ci sono errori di validazione, procedi con l'invio dell'email
     if (empty($errors)) {
-        // Validazione e sanitizzazione dei campi del modulo di contatto
-        $name = clean_input($_POST["name"]);
-        $email = filter_email($_POST["email"]);
-        $subject = clean_input($_POST["subject"]);
-        $message = clean_input($_POST["message"]);
+        // Invia l'email
+        $mail = new PHPMailer\PHPMailer\PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = 'smtp.example.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'yourusername';
+        $mail->Password = 'yourpassword';
+        $mail->Port = 587;
+        $mail->SMTPDebug = 0;
+        $mail->setFrom($email, $name);
+        $mail->addReplyTo($email, $name);
+        $mail->addAddress('recipient@example.com');
+        $mail->Subject = $subject;
+        $mail->Body = $message;
 
-        // Verifica dei campi obbligatori
-        if (empty($name) || empty($email) || empty($subject) || empty($message)) {
-            $errors[] = "Tutti i campi sono obbligatori.";
+        if ($mail->send()) {
+            echo json_encode(['status' => 'success', 'message' => 'Il tuo messaggio è stato inviato con successo. Grazie!']);
         } else {
-            // Verifica se l'email è valida
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $errors[] = "Formato email non valido.";
-            } else {
-                // Verifica il dominio dell'email
-                list($user, $domain) = explode('@', $email);
-                if (!checkdnsrr($domain, 'MX')) {
-                    $errors[] = "Dominio email non valido.";
-                }
-            }
-        }
-
-		// Verifica della lunghezza dei campi
-if (strlen($name) > 50 || strlen($subject) > 100 || strlen($message) > 500) {
-    $errors[] = "I campi superano la lunghezza massima consentita.";
-}
-
-        // Se non ci sono errori di validazione, procedi con l'invio dell'email
-        if (empty($errors)) {
-            // Crea un nuovo oggetto PHPMailer
-            $mail = new PHPMailer\PHPMailer\PHPMailer();
-            // Imposta il metodo di invio dell'email
-            $mail->isSMTP();
-            // Imposta l'host del server SMTP
-            $mail->Host = 'smtp.example.com';
-            // Imposta l'autenticazione SMTP
-            $mail->SMTPAuth = true;
-            // Imposta l'username SMTP
-            $mail->Username = 'yourusername';
-            // Imposta la password SMTP
-            $mail->Password = 'yourpassword';
-            // Imposta la porta SMTP
-            $mail->Port = 587; // Modifica la porta se necessario
-            // Abilita il debug SMTP
-            $mail->SMTPDebug = 0; // Puoi impostare a 2 per ottenere più informazioni di debug
-
-            // Imposta l'email del mittente
-            $mail->setFrom($email, $name);
-            // Imposta l'email di risposta
-            $mail->addReplyTo($email, $name);
-            // Imposta l'email del destinatario
-            $mail->addAddress('recipient@example.com');
-            // Imposta l'oggetto dell'email
-            $mail->Subject = $subject;
-            // Imposta il corpo dell'email
-            $mail->Body = $message;
-
-            // Invia l'email
-            if ($mail->send()) {
-                echo json_encode(array('status' => 'success', 'message' => 'Il tuo messaggio è stato inviato con successo. Grazie!'));
-            } else {
-                echo json_encode(array('status' => 'error', 'message' => 'Si è verificato un errore durante l\'invio del messaggio. Si prega di riprovare.'));
-            }
-        } else {
-            echo json_encode(array('status' => 'error', 'message' => implode("<br>", $errors)));
+            echo json_encode(['status' => 'error', 'message' => 'Si è verificato un errore durante l\'invio del messaggio. Si prega di riprovare.']);
         }
     } else {
-        echo json_encode(array('status' => 'error', 'message' => implode("<br>", $errors)));
+        echo json_encode(['status' => 'error', 'message' => implode("<br>", $errors)]);
     }
 } else {
-    echo json_encode(array('status' => 'error', 'message' => 'Si è verificato un errore durante l\'invio del messaggio. Si prega di riprovare.'));
+    echo json_encode(['status' => 'error', 'message' => 'Richiesta non valida.']);
 }
 ?>
