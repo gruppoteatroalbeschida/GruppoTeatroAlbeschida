@@ -11,6 +11,6 @@ Commit le tue modifiche (git commit -am 'Aggiungi nuova funzionalità')
 Push al branch (git push origin feature/nuova-funzionalità)
 Apri una Pull Request 
 
-Sviluppato con ❤️ da Sara Caredda.  
+Sviluppato con ❤️ da Sara Caredda Pro Bono per l'Associazione di Volontariato Albeschida
 
 
