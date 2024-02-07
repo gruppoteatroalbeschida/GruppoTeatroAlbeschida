@@ -67,15 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Invia l'email
         $mail = new PHPMailer\PHPMailer\PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.example.com';
+        $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'yourusername';
-        $mail->Password = 'yourpassword';
+        $mail->Username = 'caredda.sara@gmail.com';
+        $mail->Password = 'kxlq lshm evwh zfxa';
         $mail->Port = 587;
         $mail->SMTPDebug = 0;
         $mail->setFrom($email, $name);
         $mail->addReplyTo($email, $name);
-        $mail->addAddress('recipient@example.com');
+        $mail->addAddress('caredda.sara@gmail.com');
         $mail->Subject = $subject;
         $mail->Body = $message;
 
