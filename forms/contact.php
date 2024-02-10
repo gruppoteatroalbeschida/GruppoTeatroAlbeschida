@@ -90,4 +90,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Richiesta non valida.']);
 }
+
+// Verifica se ci sono errori
+if (!empty($errors)) {
+    echo '<div class="errors">';
+    echo '<ul>';
+    // Itera sugli errori e li mostra come liste non ordinate
+    foreach ($errors as $error) {
+        echo '<li>' . $error . '</li>';
+    }
+    echo '</ul>';
+    echo '</div>';
+}
 ?>

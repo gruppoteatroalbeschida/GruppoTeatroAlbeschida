@@ -49,10 +49,12 @@ $(document).ready(function() {
         if (name === '') {
             $('#name').after('<span class="error">Il campo nome è obbligatorio</span>');
             isValid = false;
+
         } else if (name.length < 2 || name.length > 50) {
             $('#name').after('<span class="error">Il nome deve contenere tra 2 e 50 caratteri.</span>');
             isValid = false;
         }
+
 
 
         // Validazione del campo email
