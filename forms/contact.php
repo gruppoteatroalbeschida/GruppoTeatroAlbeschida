@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors[] = "I campi superano la lunghezza massima consentita.";
         }
         if (strlen($name) < 2) {
-            $errors[] = "Il nome deve contenere almeno 2 caratteri.";
+            $errors[] = 'Il nome deve contenere almeno 2 caratteri.';
         }
         if (strlen($subject) < 5) {
             $errors[] = "L'oggetto deve contenere almeno 5 caratteri.";

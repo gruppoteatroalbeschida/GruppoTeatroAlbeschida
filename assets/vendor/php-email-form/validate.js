@@ -44,17 +44,8 @@ $(document).ready(function() {
         var subject = $('#subject').val().trim();
         var message = $('#message').val().trim();
 
-        if (name === '') {
-            $('#name').after('<span class="error">Il campo nome è obbligatorio</span>');
-            isValid = false;
-        } else if (name.length > 50) {
-            $('#name').after('<span class="error">Il campo nome non può superare i 50 caratteri</span>');
-            isValid = false;
-        } else if (name.length < 2) {
-            $('#name').after('<span class="error">Il nome deve contenere almeno 2 caratteri.</span>');
-            isValid = false;
-        }
         // Validazione del campo nome
+
         if (name === '') {
             $('#name').after('<span class="error">Il campo nome è obbligatorio</span>');
             isValid = false;
@@ -62,6 +53,7 @@ $(document).ready(function() {
             $('#name').after('<span class="error">Il nome deve contenere tra 2 e 50 caratteri.</span>');
             isValid = false;
         }
+
 
         // Validazione del campo email
         if (email === '') {
