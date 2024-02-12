@@ -977,6 +977,8 @@ section {
     font-size: 14px;
 }
 
+
+/**
 .contact .php-email-form .error {
     display: none;
     color: #fff;
@@ -1045,9 +1047,36 @@ section {
         transform: rotate(360deg);
     }
 }
+**/
 
-.contact .my-3 p {
+
+/**.contact .my-3 p {
     font-size: 12px;
+}**/
+
+#footer-links {
+    margin-bottom: 30px;
+}
+
+#footer-links ul {
+    list-style: none;
+    padding: 5px 0 0 0;
+    margin: 0;
+    font-size: 36px;
+}
+
+#footer-links ul li {
+    padding: 0 0 15px 0;
+    font-size: 14px;
+}
+
+#footer-links ul a {
+    color: #777;
+    transition: 0.3s;
+}
+
+#footer-links ul a:hover {
+    color: #e29d07;
 }
 
 
