@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!--
+  =======================================================
+  * Nome del sito: Gruppo Teatro Albeschida
+  * Aggiornato: 05 Gennaio 2024 con Bootstrap v5.3.2 
+  * Autore: Sara Caredda 
+  * Licenza: MIT LICENCE Copyright (c) 2024 sarac
+  ======================================================== 
+   -->
+
+    <!--Tag per specificare in ordine: l'encoding dei caratteri per la pagina come UTF-8, le proprietà del viewport, la lingua della pagina. Per comunicare agli spider dei SE di includere la pagina nei risultati di ricerca e di seguire i link presenti sulla pagina. I tag consentono poi di specificare l'autore della pagina, e di indicare l'indirizzo email a cui dovrebbe essere inviato il reply quando qualcuno risponde a un'email generata dalla pagina.-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name='language' content='IT'>
+    <meta name='robots' content='index,follow'>
+    <meta name='author' content='Sara Caredda'>
+    <meta name='reply-to' content='ass.albeschida@tiscali.it'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Esempio di utilizzo: html
+	<form method="post" action="/process-form" replyto="email@hotmail.com">
+    <input type="submit" value="Invia">
+    </form>-->
+
+    <!-- Meta tag Open Graph per l'ottimizzazione su Facebook -->
+    <meta property='og:title ' content='Gruppo Teatro Albeschida'>
+    <meta property='og:type ' content='Website'>
+    <meta property='og:description ' content='Anche la notte più buia conosce il chiarore dell&rsquoalba'>
+    <meta property='og:image ' content='URL-dell-immagine-da-condividere.jpg'>
+    <meta property='og:url ' content='URL-del-tuo-sito'>
+
+    <!-- Importante! Tra i tag meta cerca e inserisci i tag per google analytics per monitorare e analizzare il comportamento degli utenti. -->
+
+    <title>Gruppo Teatro Albeschida</title>
+    <!-- descrizione utilizzata dai motori di ricerca e dai social media per fornire un'anteprima del contenuto della pagina. Rimanere sotto i 160 caratteri per far si che sia visualizzata completamente -->
+    <meta content="" name="description">
+    <!-- Parole chiave rilevanti per la pagina -->
+    <meta name=' keywords ' content='albeschida, teatro, sociale, associazione, volontariato '>
+    <!-- Imposta l'URL canonico per evitare duplicazioni di contenuto -->
+    <link rel='canonical' href='url del tuo sito'>
+
+    <!-- Favicons -->
+    <!-- Favicon principale -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+    <!-- Favicon per dispositivi Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <!-- Favicon per dispositivi Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon_io/android-chrome-512x512.png">
+    <!-- Favicon 16x16 pixel -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon-16x16.png" sizes="16x16">
+    <!-- Favicon 32x32 pixel -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon-32x32.png" sizes="32x32">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+    <!-- File CSS del Vendor -->
+    <!--Bootstrap  v5.3.2 (https://getbootstrap.com/) -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- File CSS Principale -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- File JS -->
+    <!-- jQuery dal CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- File JS del Vendor -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- script validate.js -->
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+    <!-- ======= Intestazione ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+
+                <!--  <h1><a href="index.html">Albeschida</a></h1>
+              -->
+                <a href="index.html"><img src="assets/img/logo ricreato2.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Chi siamo</a></li>
+                    <li><a class="nav-link scrollto" href="#about">La nostra storia</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Mission/Vision</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Recensioni</a></li>
+                    <li><a class="nav-link scrollto" href="#portfolio">Sostienici</a></li>
+                    <!-- commento <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 2</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                        </ul>
+                    </li>
+					-->
+                    <li><a class="nav-link scrollto" href="#contact">Contattaci</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- Fine intestazione -->
+
+    <!-- ======= Sezione Hero ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <h1>Scopri Albeschida: la tua destinazione
+                <br>per vivere esperienze uniche</h1>
+            <h2>Benvenuti in un luogo dove un gruppo di individui con disagio mentale, insieme a volontari e familiari, si unisce
+                <br> per creare eventi che vanno oltre le barriere, celebrando la forza, la creatività e la connessione umana. </h2>
+            <a href="#about" class="btn-get-started scrollto">Inizia qui</a>
+        </div>
+    </section>
+    <!-- Fine Hero-->
+
+    <main id="main">
+
+        <!-- ======= Sezione Chi siamo ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Chi siamo</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <img src="assets/img/about-imge.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+                        <h3>Siamo un'associazione di volontariato impegnata a fare la differenza nella vita di coloro che affrontano disagi psichici.</h3>
+                        <p class="fst-italic">
+                            Siamo guidati dalla convinzione che attraverso il sostegno solidale, possiamo contribuire a migliorare la qualità della vita delle persone coinvolte. Cosa ci guida:
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-circle"></i> Empatia e Rispetto: Poniamo al centro di tutto il nostro lavoro l'empatia e il rispetto per le esperienze individuali. Ogni persona è unica, e lavoriamo per comprendere e rispettare la diversità
+                                delle sfide che ogni individuo affronta.</li>
+                            <li><i class="bi bi-check2-circle"></i> Inclusività: Creiamo un ambiente inclusivo dove ogni voce è ascoltata e valorizzata. Crediamo che la diversità sia una risorsa e che l'inclusività sia fondamentale per il nostro lavoro.</li>
+                            <li><i class="bi bi-check2-circle"></i> Riduzione dello Stigma: Lavoriamo attivamente per eliminare il stigma associato ai disturbi psichici. Sosteniamo la consapevolezza pubblica e la comprensione della salute mentale, contribuendo
+                                a creare una società più aperta e accogliente.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fine Sezione Chi Siamo -->
+
+        <!-- ======= Sezione La nostra storia ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>La nostra storia</h2>
+                    <p>Albeschida è un’associazione di volontariato nata nell'agosto del 2000 che si è distinta per il suo lavoro a favore dei sofferenti psichici. Nei suoi anni di attività ha promosso e supportato attività risocializzanti per portare i
+                        propri volontari verso l'autonomia. Tra i tanti progetti, l'associazione ha creato laboratori teatrali, di cucito, di cucina e di ceramica, oltre a stabilire interventi di pet therapy e a creare un fiorente orto sociale. Grazie
+                        alle donazioni di Alcoa Foundation ad Albeschida, fu costruito un forno e fu possibile dotarsi di un trattore per rendere possibile la piantagione di tutti gli alberi e delle coltivazioni presenti nei terreni attorno al Centro
+                        Diurno, con cui in parte l'Associazione si è autofinanziata. Nel 2020, durante la pandemia, il gruppo fu costretto a dipartire dai territori della ASL, e i terreni sono ancora lì, incolti. Albeschida è uno dei tanti esempi della
+                        capacità degli enti di volontariato di reinventarsi e resistere anche alle più difficili situazioni. Rimasta senza sede è stata soprannominata Albeschida Diffusa dal presidente Antonio Cesare Gerini e vive dell'accoglienza di altre
+                        associazioni del territorio. Questo è un segno dell'importanza dell'aggregazione e della cooperazione tra enti diversi per la creazione di ambienti sociali più sani e inclusivi. Ora Albeschida continua a produrre spettacoli grazie
+                        all'ospitalità della Comunità di Via Marconi a Carbonia, e si riunisce presso la Casa del Popolo ogni sabato per un pranzo sociale. Il gruppo teatro organizza rassegne focalizzate sulla prevenzione e l'abbattimento dei pregiudizi
+                        sul disturbo mentale, che coinvolgono realtà regionali e nazionali. Incontra gli obiettivi formativi di alcune scuole secondarie della città di Carbonia con le quali ha un rapporto stretto. Un lavoro fondamentale per l'attività
+                        di Albeschida è quel piccolo laboratorio che si trova all'interno della casa di una delle volontarie. In questo luogo si possono produrre costumi, oggetti, accessori, e altro ancora. È qui che si rende possibile dare vita ai vari
+                        spettacoli teatrali che Albeschida produce, grazie ai costumi realizzati in modo artigianale, ma soprattutto grazie alla creatività e alla passione che ci stanno dietro.
+                    </p>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-cpu"></i></div>
+                        <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+                        <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-clipboard-data"></i></div>
+                        <h4 class="title"><a href="">Dolor Sitema</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-globe"></i></div>
+                        <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-images"></i></div>
+                        <h4 class="title"><a href="">Magni Dolores</a></h4>
+                        <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-sliders"></i></div>
+                        <h4 class="title"><a href="">Nemo Enim</a></h4>
+                        <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 icon-box">
+                        <div class="icon"><i class="bi bi-building"></i></div>
+                        <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+                    </div> -->
+            </div>
+
+            </div>
+        </section>
+        <!-- Fine Sezione La nostra storia -->
+
+        <!-- ======= Sezione della Call To Action ======= -->
+        <section class="call-to-action">
+            <div class="container">
+
+                <div class="text-center">
+                    <h3>Agisci ora per il benessere mentale!</h3>
+                    <p> Ogni gesto conta. Ogni persona coinvolta fa la differenza. Non aspettare che qualcun altro faccia il primo passo. Sii tu il cambiamento che vuoi vedere nel mondo della salute mentale. </p>
+                    <a class="cta-btn" href="#">Sostienici</a>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fine della sezione Call To Action -->
+
+        <!-- ======= Our Portfolio Section ======= 
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Gallery</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">All</li>
+                            <li data-filter=".filter-app">App</li>
+                            <li data-filter=".filter-card">Card</li>
+                            <li data-filter=".filter-web">Web</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row portfolio-container">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1">App 1</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3">Web 3</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2">App 2</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2">Card 2</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2">Web 2</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3">App 3</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1">Card 1</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3">Card 3</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h3><a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 1">Web 1</a></h3>
+                                <div>
+                                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 1"><i class="bi bi-plus"></i></a>
+                                    <a href="portfolio-details.html" title="Details"><i class="bi bi-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section> -->
+        <!-- End Our Portfolio Section -->
+
+        <!-- ======= Frequently Asked Questions Section ======= 
+        <section id="faq" class="faq section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Mission/Vision</h2>
+                </div>
+
+                <ul class="faq-list">
+
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                cursus turpis massa tincidunt dui.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna
+                                molestie at elementum eu facilisis sed odio morbi quis
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in
+                                cursus turpis massa tincidunt dui.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+                        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque
+                                diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                            </p>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section> -->
+        <!-- End Frequently Asked Questions Section -->
+
+        <!-- ======= Our Team Section ======= 
+        <section id="team" class="team">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Our Team</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+                        quidem hic quas.</p>
+                </div>
+
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                            <img src="assets/img/team/team-1.jpg" alt="">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                            <p>
+                                Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                            <img src="assets/img/team/team-2.jpg" alt="">
+                            <h4>Sarah Jhinson</h4>
+                            <span>Product Manager</span>
+                            <p>
+                                Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="member">
+                            <img src="assets/img/team/team-3.jpg" alt="">
+                            <h4>William Anderson</h4>
+                            <span>CTO</span>
+                            <p>
+                                Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                            </p>
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section> -->
+        <!-- End Our Team Section -->
+
+        <!-- ======= Sezione Contatti======= -->
+        <section id="contact" class="contact section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contattaci</h2>
+                    <p>Siamo qui per te. Se hai domande, richieste o desideri condividere la tua storia, non esitare a contattarci. La tua voce è importante, e siamo pronti ad ascoltarti. Invia un messaggio, chiamaci o scrivici una mail – siamo pronti a
+                        rispondere con il nostro impegno e supporto.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-about">
+                            <h3>Albeschida</h3>
+                            <p>Un Cuore, Mille Storie, Una Missione: Volontariato con Passione e Compassione."</p>
+                            <div class="social-links">
+                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="info">
+                            <div>
+                                <i class="bi bi-geo-alt"></i>
+                                <p>Via Napoli #5<br>Carbonia, CI 09013</p>
+                            </div>
+
+                            <div>
+                                <i class="bi bi-envelope"></i>
+                                <p>ass.albeschida@tiscali.it ass.albeschida@winpec.it
+                                </p>
+
+                            </div>
+
+                            <div>
+                                <i class="bi bi-phone"></i>
+                                <p>+39 351 742 8699</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div id="footer-links" class="col-lg-5 col-md-6">
+                        <h4>Link utili</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Chi siamo</a></li>
+                            <li><a href="#">Servizi</a></li>
+                            <li><a href="#">Termini di servizio</a></li>
+                            <li><a href="#">Polizza di privacy</a></li>
+                        </ul>
+                        <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="contactForm">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Il tuo nome *" required>
+                                <span id="error"></span>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="La tua email *" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Oggetto *" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Messaggio *" required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="error"></div>
+                                <div class="contact">
+                                    <p class="my-3">* campo obbligatorio
+                                    </p>
+                                </div>
+                                <div class="sent-message">Il tuo messaggio è stato inviato. Grazie!</div>
+                            </div>
+                            <div class="text-center"><button type="submit">Invia messaggio</button></div>
+                        </form>
+						-->
+
+        </section>
+
+        <!-- Fine Sezione Contatti -->
+
+    </main>
+    <!-- Fine di #main -->
+
+    <!-- ======= Footer =======  -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>2024 sarac</span></strong>. MIT License.
+            </div>
+            <div class="credits">
+                Designed by Sara Caredda
+            </div>
+        </div>
+    </footer>
+    <!-- Fine #footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+    <!-- File JS Principale -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
