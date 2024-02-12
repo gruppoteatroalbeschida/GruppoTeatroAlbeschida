@@ -1,5 +1,5 @@
 /**
- * PHP Email Form Validation - v3.6  
+ * Email Form Validation 
  */
 
 $(document).ready(function() {
@@ -39,23 +39,29 @@ $(document).ready(function() {
         $('.error').remove();
 
         // Validazione dei campi del modulo
-        var name = $('#name').val().trim();
-        var email = $('#email').val().trim();
-        var subject = $('#subject').val().trim();
-        var message = $('#message').val().trim();
-
-        // Validazione del campo nome
+        var name = $('#name').val().trim(); // Assicurati che #name esista
+        var email = $('#email').val().trim(); // Assicurati che #email esista
+        var subject = $('#subject').val().trim(); // Assicurati che #subject esista
+        var message = $('#message').val().trim(); // Assicurati che #message esista
 
         if (name === '') {
             $('#name').after('<span class="error">Il campo nome è obbligatorio</span>');
             isValid = false;
-
+        } else if (name.length > 50) {
+            $('#name').after('<span class="error">Il campo nome non può superare i 50 caratteri</span>');
+            isValid = false;
+        } else if (name.length < 2) {
+            $('#name').after('<span class="error">Il nome deve contenere almeno 2 caratteri.</span>');
+            isValid = false;
+        }
+        // Validazione del campo nome
+        if (name === '') {
+            $('#name').after('<span class="error">Il campo nome è obbligatorio</span>');
+            isValid = false;
         } else if (name.length < 2 || name.length > 50) {
             $('#name').after('<span class="error">Il nome deve contenere tra 2 e 50 caratteri.</span>');
             isValid = false;
         }
-
-
 
         // Validazione del campo email
         if (email === '') {

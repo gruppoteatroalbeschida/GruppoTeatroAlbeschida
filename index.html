@@ -71,6 +71,18 @@
 
 <body>
 
+    <!-- File JS -->
+    <!-- jQuery dal CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- File JS del Vendor -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- script validate.js -->
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
     <!-- ======= Intestazione ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
         <div class="container d-flex align-items-center">
@@ -564,39 +576,33 @@
 
                         </div>
                     </div>
-                    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
                     <div class="col-lg-5 col-md-12">
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="contactForm">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Il tuo nome" required>
-                                <span class="error"></span>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Il tuo nome *" required>
+                                <span id="error"></span>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="La tua email" required>
-                                <span class="error"></span>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="La tua email *" required>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Oggetto" required>
-                                <span class="error"></span>
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Oggetto *" required>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Messaggio" required></textarea>
-                                <span class="error"></span>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Messaggio *" required></textarea>
                             </div>
                             <div class="my-3">
                                 <div class="error"></div>
+                                <div class="contact">
+                                    <p class="my-3">* campo obbligatorio
+                                    </p>
+                                </div>
                                 <div class="sent-message">Il tuo messaggio è stato inviato. Grazie!</div>
                             </div>
                             <div class="text-center"><button type="submit">Invia messaggio</button></div>
                         </form>
-                    </div>
-
-                </div>
-
-            </div>
-
 
         </section>
 
@@ -620,11 +626,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- File JS del Vendor -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
 
 
     <!-- File JS Principale -->

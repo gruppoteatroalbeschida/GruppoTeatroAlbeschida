@@ -977,7 +977,7 @@ section {
     font-size: 14px;
 }
 
-.contact .php-email-form .error-message {
+.contact .php-email-form .error {
     display: none;
     color: #fff;
     background: #ed3c0d;
@@ -986,7 +986,7 @@ section {
     font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error br+br {
     margin-top: 25px;
 }
 
@@ -1044,6 +1044,10 @@ section {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.contact .my-3 p {
+    font-size: 12px;
 }
 
 
