@@ -59,7 +59,7 @@
 
     <!-- File CSS del Vendor -->
     <!--Bootstrap  v5.3.2 (https://getbootstrap.com/) -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@
 
     <!-- File JS -->
     <!-- jQuery dal CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- File JS del Vendor -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -82,6 +82,8 @@
 
     <!-- script validate.js -->
     <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+
 
     <!-- ======= Intestazione ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
@@ -145,10 +147,50 @@
     <!-- Fine intestazione -->
 
     <!-- ======= Sezione Carosello 1 ======= -->
-    <section>
+    <section id="carousel">
 
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicatori/punti -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Lo slideshow/carousel -->
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets\img\hero-background.jpg" alt="Los Angeles" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets\img\hero-background.jpg" alt="Chicago" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets\img\hero-background.jpg" alt="New York" class="d-block w-100">
+                    </div>
+                </div>
+
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+				  <span class="carousel-control-prev-icon"></span>
+				</button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+				  <span class="carousel-control-next-icon"></span>
+				</button>
+            </div>
     </section>
-    <!-- Fine Carosello 1-->
+    <!-- =======Fine carosello 1=======-->
 
     <main id="main">
 
@@ -178,7 +220,70 @@
         <!-- Fine Sezione La nostra storia -->
 
 
+        <!-- ======= Sezione Carosello 2 ======= -->
+        <section id="carousel">
 
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicatori/punti -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                </div>
+
+                <!-- Lo slideshow/carousel -->
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets\img\hero-background.jpg" alt="Los Angeles" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\img\hero-background.jpg" alt="Chicago" class="d-block w-100">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\img\hero-background.jpg" alt="New York" class="d-block w-100">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+			  <span class="carousel-control-prev-icon"></span>
+			</button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+			  <span class="carousel-control-next-icon"></span>
+			</button>
+                </div>
+        </section>
+
+        <!-- =======Sezione La nostra storia=======-->
+        <section id="services" class="services section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Innovazioni e successi</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id maximus lorem. Pellentesque eleifend dolor in lectus commodo malesuada. Donec cursus elementum tristique. Phasellus tincidunt semper magna, in malesuada ante commodo
+                        malesuada. Nunc a nibh quam. Aliquam vitae velit erat. Nunc finibus viverra arcu ac fringilla. Suspendisse potenti. Proin in eros eget mauris fringilla suscipit in nec mi. Aliquam elit tortor, mollis at fringilla non, lobortis
+                        id sapien. Maecenas volutpat, libero in iaculis tristique, lacus turpis mollis lorem, sed pulvinar dui metus non justo. Pellentesque consectetur ipsum vitae ultrices pretium. Nullam egestas justo vel orci laoreet, auctor sollicitudin
+                        tellus sagittis. Aliquam vestibulum diam quis risus commodo, vel porttitor nibh mattis. Vestibulum nec condimentum orci, a dapibus urna. Nullam imperdiet felis nisl, eu iaculis massa hendrerit sit amet. Ut in lacus velit. Etiam
+                        elementum lectus felis, in suscipit arcu dignissim a. Quisque tincidunt tempus imperdiet. Suspendisse in magna nisi. Nunc a metus non tellus commodo cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur
+                        nisi at hendrerit lacinia. </p>
+
+                    </p>
+                </div>
+            </div>
+
+            </div>
+        </section>
 
         <!-- ======= Sezione Contatti======= -->
         <section id="contact" class="contact section-bg">
