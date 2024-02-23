@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!--
+  =======================================================
+  * Nome del sito: Gruppo Teatro Albeschida
+  * Aggiornato: 05 Gennaio 2024 con Bootstrap v5.3.2 
+  * Autore: Sara Caredda 
+  * Licenza: MIT LICENCE Copyright (c) 2024 sarac
+  ======================================================== 
+   -->
+
+    <!--Tag per specificare in ordine: l'encoding dei caratteri per la pagina come UTF-8, le proprietà del viewport, la lingua della pagina. Per comunicare agli spider dei SE di includere la pagina nei risultati di ricerca e di seguire i link presenti sulla pagina. I tag consentono poi di specificare l'autore della pagina, e di indicare l'indirizzo email a cui dovrebbe essere inviato il reply quando qualcuno risponde a un'email generata dalla pagina.-->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name='language' content='IT'>
+    <meta name='robots' content='index,follow'>
+    <meta name='author' content='Sara Caredda'>
+    <meta name='reply-to' content='ass.albeschida@tiscali.it'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Esempio di utilizzo: html
+	<form method="post" action="/process-form" replyto="email@hotmail.com">
+    <input type="submit" value="Invia">
+    </form>-->
+
+    <!-- Meta tag Open Graph per l'ottimizzazione su Facebook -->
+    <meta property='og:title ' content='Gruppo Teatro Albeschida'>
+    <meta property='og:type ' content='Website'>
+    <meta property='og:description ' content='Anche la notte più buia conosce il chiarore dell&rsquoalba'>
+    <meta property='og:image ' content='URL-dell-immagine-da-condividere.jpg'>
+    <meta property='og:url ' content='URL-del-tuo-sito'>
+
+    <!-- Importante! Tra i tag meta cerca e inserisci i tag per google analytics per monitorare e analizzare il comportamento degli utenti. -->
+
+    <title>Gruppo Teatro Albeschida</title>
+    <!-- descrizione utilizzata dai motori di ricerca e dai social media per fornire un'anteprima del contenuto della pagina. Rimanere sotto i 160 caratteri per far si che sia visualizzata completamente -->
+    <meta content="" name="description">
+    <!-- Parole chiave rilevanti per la pagina -->
+    <meta name=' keywords ' content='albeschida, teatro, sociale, associazione, volontariato '>
+    <!-- Imposta l'URL canonico per evitare duplicazioni di contenuto -->
+    <link rel='canonical' href='url del tuo sito'>
+
+    <!-- Favicons -->
+    <!-- Favicon principale -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+    <!-- Favicon per dispositivi Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <!-- Favicon per dispositivi Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon_io/android-chrome-512x512.png">
+    <!-- Favicon 16x16 pixel -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon-16x16.png" sizes="16x16">
+    <!-- Favicon 32x32 pixel -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon-32x32.png" sizes="32x32">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Lato:400,300,700,900" rel="stylesheet">
+
+    <!-- File CSS del Vendor -->
+    <!--Bootstrap  v5.3.2 (https://getbootstrap.com/) -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- File CSS Principale -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- File JS -->
+    <!-- jQuery dal CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- File JS del Vendor -->
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- script validate.js -->
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+
+    <!-- ======= Intestazione ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center">
+            <div class="logo me-auto">
+
+                <!--  <h1><a href="index.html">Albeschida</a></h1>
+              -->
+                <a href="index.html"><img src="assets/img/logo ricreato2.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li class="dropdown"><a href="index.html"><span>Home</span> <i class="bi bi-list mobile-nav-toggle"></i></i></a>
+
+                    </li>
+                    <li><a href="chi_siamo.html" class="nav-link scrollto"><span>Chi siamo</span> <i class="bi bi-list mobile-nav-toggle"></i></a>
+
+                    </li>
+
+                    <li><a href="cosa_facciamo.html" class="nav-link scrollto"><span>Cosa facciamo</span> <i class="bi bi-list mobile-nav-toggle"></i></a>
+
+                    </li>
+
+                    <li><a href="spettacoli.html" class="nav-link scrollto"><span>I nostri spettacoli</span> <i class="bi bi-list mobile-nav-toggle"></i></a>
+
+                    </li>
+
+                    <li><a href="#" class="nav-link scrollto"><span>Sostienici</span> <i class="bi bi-list mobile-nav-toggle"></i></i></a>
+
+                    </li>
+
+
+                    <li><a class="nav-link scrollto" href="#contact">Contattaci</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- =======Sezione Spettacoli Attivi=======-->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Laboratorio di Teatro</h2>
+                </div>
+
+                <div class="row">
+                    <div class="row gy-4">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="portfolio-details-slider swiper">
+                                    <div class="swiper-wrapper align-items-center">
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/portfolio/portfolio-1.jpg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <h3>Come lavoriamo </h3>
+                                <p>
+                                    Qui puoi inserire il testo che desideri mostrare accanto all'immagine. Puoi aggiungere ulteriori contenuti come paragrafi, elenchi, ecc. Proin in eros eget mauris fringilla suscipit in nec mi. Aliquam elit tortor, mollis at fringilla non, lobortis id
+                                    sapien. Maecenas volutpat, libero in iaculis tristique, lacus turpis mollis lorem, sed pulvinar dui metus non justo. Pellentesque consectetur ipsum vitae ultrices pretium. In efficitur, felis non fermentum bibendum,
+                                    ex urna hendrerit tortor, in elementum sapien neque a urna. Curabitur risus leo, dictum vel nisi quis, laoreet tempor ligula. Proin in turpis porttitor, commodo nisl et, mollis lorem. <br>                                    Sed lobortis lectus et congue pellentesque. Vivamus ullamcorper efficitur erat, nec luctus est pulvinar sit amet. Donec vel vestibulum justo. Pellentesque non fringilla neque. Nam nisi velit, lacinia in libero eu, faucibus
+                                    vehicula turpis. Vivamus in sagittis elit. Ut ornare lobortis scelerisque.</p>
+                                Sed lobortis lectus et congue pellentesque. Vivamus ullamcorper efficitur erat, nec luctus est pulvinar sit amet. Donec vel vestibulum justo. Pellentesque non fringilla neque.
+                            </div>
+                        </div>
+
+                        </p>
+                        <br>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class="container-fluid">
+                    <p>
+                        Proin in eros eget mauris fringilla suscipit in nec mi. Aliquam elit tortor, mollis at fringilla non, lobortis id sapien. Maecenas volutpat, libero in iaculis tristique, lacus turpis mollis lorem, sed pulvinar dui metus non justo. Pellentesque consectetur
+                        ipsum vitae ultrices pretium. In efficitur, felis non fermentum bibendum, ex urna hendrerit tortor, in elementum sapien neque a urna. Curabitur risus leo, dictum vel nisi quis, laoreet tempor ligula. Proin in turpis porttitor,
+                        commodo nisl et, mollis lorem. Sed lobortis lectus et congue pellentesque. Vivamus ullamcorper efficitur erat, nec luctus est pulvinar sit amet. Donec vel vestibulum justo. Pellentesque non fringilla neque. Nam nisi velit, lacinia
+                        in libero eu, faucibus vehicula turpis. Vivamus in sagittis elit. Ut ornare lobortis scelerisque. Praesent eu sagittis ex. Morbi leo mauris, consequat nec metus a, lacinia consectetur purus. Donec ac erat sapien. Donec ac vestibulum
+                        erat.
+                    </p>
+                </div>
+
+        </section>
+
+        <!-- Fine Sezione Spettacoli attivi -->
+
+        <!-- ======= Sezione della Call To Action ======= -->
+        <section id="calltoaction" class="call-to-action">
+            <div class="container">
+
+                <div class="text-center">
+                    <h3>Scopri come puoi unirti a noi!</h3>
+                    <p> Praesent eu sagittis ex. Morbi leo mauris, consequat nec metus a, lacinia consectetur purus. Donec ac erat sapien. Donec ac vestibulum erat. </p>
+                    <a class="cta-btn" href="sostienici.html">Button</a>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fine della sezione Call To Action -->
+
+
+        <!-- ======= Sezione Collaborazioni ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Le nostre collaborazioni</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <img src="assets/img/about-imge.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
+                        <h3>Nunc a nibh quam. Aliquam vitae velit erat. Nunc finibus viverra arcu ac fringilla. Suspendisse potenti. </h3>
+                        <p class="fst-italic">
+                            Proin in eros eget mauris fringilla suscipit in nec mi. Aliquam elit tortor, mollis at fringilla non, lobortis id sapien. Maecenas volutpat, libero in iaculis tristique, lacus turpis mollis lorem, sed pulvinar dui metus non justo. Pellentesque consectetur
+                            ipsum vitae ultrices pretium.
+                        </p>
+                        <ul>
+                            <li><i class="bi bi-check2-circle"></i> Nullam egestas justo vel orci laoreet, auctor sollicitudin tellus sagittis. Aliquam vestibulum diam quis risus commodo, vel porttitor nibh mattis.
+                            </li>
+                            <li><i class="bi bi-check2-circle"></i> Vestibulum nec condimentum orci, a dapibus urna. Nullam imperdiet felis nisl, eu iaculis massa hendrerit sit amet. Ut in lacus velit. </li>
+                            <li><i class="bi bi-check2-circle"></i> Etiam elementum lectus felis, in suscipit arcu dignissim a. Quisque tincidunt tempus imperdiet. Suspendisse in magna nisi. Nunc a metus non tellus commodo cursus.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fine Sezione Collaborazioni -->
+
+
+        <!-- ======= Sezione Contatti======= -->
+        <section id="contact" class="contact section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contattaci</h2>
+                    <p>Siamo qui per te. Se hai domande, richieste o desideri condividere la tua storia, non esitare a contattarci. La tua voce è importante, e siamo pronti ad ascoltarti. Invia un messaggio, chiamaci o scrivici una mail – siamo pronti a
+                        rispondere con il nostro impegno e supporto.</p>
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-6 col-md-5">
+                        <div class="contact-about">
+                            <h3>Albeschida</h3>
+                            <p>Anche l'alba più buia conosce il chiarore dell'alba"</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur nisi at hendrerit lacinia. Pellentesque viverra facilisis convallis. Morbi et elit ut lectus venenatis tincidunt. Donec tempor cursus nibh rhoncus
+                                hendrerit. Integer vitae orci sodales, ultrices libero id, tincidunt neque.</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/profile.php?id=100079742737129" class="facebook" title="Associazione di Volontariato Albeschida Facebook"><i class="bi bi-facebook" ></i></a>
+                                <a href="https://www.facebook.com/p/Sguardi-dal-ponte-100072467058232/" class="facebook" title="Sguardi dal Ponte Facebook"><i class="bi bi-facebook" ></i></a>
+                                <a href="https://www.instagram.com/sguardi_dal_ponte/" class="instagram" title="Sguardi dal Ponte Instagram"><i class="bi bi-instagram" ></i></a>
+                                <a href="https://www.instagram.com/sguardi_dal_ponte/" class="youtube" title="Gruppo Teatro Albeschida Youtube"><i class="bi bi-youtube" ></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="info">
+                            <div>
+                                <i class="bi bi-geo-alt"></i>
+                                <p>Via Napoli #5<br>Carbonia, CI 09013</p>
+                            </div>
+
+                            <div>
+                                <i class="bi bi-envelope"></i>
+                                <p>ass.albeschida@tiscali.it ass.albeschida@winpec.it
+                                </p>
+
+                            </div>
+
+                            <div>
+                                <i class="bi bi-phone"></i>
+                                <p>+39 351 742 8699</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div id="footer-links" class="col-lg-2 col-md-6">
+                        <h4>Link utili</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Chi siamo</a></li>
+                            <li><a href="#">Sostienici</a></li>
+                            <li><a href="#">Termini di servizio</a></li>
+                            <li><a href="#">Polizza di privacy</a></li>
+                        </ul>
+                    </div>
+
+
+        </section>
+
+        <!-- ======= Fine Sezione Contatti======= -->
+
+    </main>
+    <!-- Fine di #main -->
+
+    <!-- ======= Footer =======  -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>2024 sarac</span></strong>. MIT License.
+            </div>
+            <div class="credits">
+                Designed by Sara Caredda
+            </div>
+        </div>
+    </footer>
+    <!-- Fine #footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+    <!-- File JS Principale -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
